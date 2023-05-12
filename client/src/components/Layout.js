@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
       icon: "fa-solid fa-house",
     },
     {
-      name: "Appointments",
+      name: "Appintment",
       path: "/doctor-appointments",
       icon: "fa-solid fa-list",
     },
@@ -45,46 +45,77 @@ const Layout = ({ children }) => {
     : userMenu;
   return (
     <>
+      {/* start nav bar */}
+      {/* end nav bar */}
       <div className="main">
         <div className="layout">
           <div className="sidebar">
-            <div className="logo">
-              <h6 className="text-light">DOC APP</h6>
-              <hr />
-            </div>
-            <div className="menu">
-              {SidebarMenu.map((menu) => {
-                const isActive = location.pathname === menu.path;
-                return (
-                  <>
-                    <div className={`menu-item ${isActive && "active"}`}>
-                      <i className={menu.icon}></i>
-                      <Link to={menu.path}>{menu.name}</Link>
-                    </div>
-                  </>
-                );
-              })}
-              <div className={`menu-item `} onClick={handleLogout}>
-                <i className="fa-solid fa-right-from-bracket"></i>
-                <Link to="/login">Logout</Link>
+            <div className="row">
+              <div
+                className="col-logo"
+                style={{
+                  marginRight: "50px",
+                }}
+              >
+                <img
+                  style={{
+                    width: "75px",
+                    height: "auto",
+                    marginLeft: "30px",
+                  }}
+                  src="https://www.aryavaidyasala.com/images/avs-logo.png"
+                  alt="not_found_icon"
+                />
+                <h6
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  HOSPITEL <br /> APPOINTMENT
+                </h6>
+              </div>
+              <div className="col">
+                {SidebarMenu.map((menu) => {
+                  const isActive = location.pathname === menu.path;
+                  return (
+                    <>
+                      <div className={` menu-item ${isActive && "active "}`}>
+                        <i className={menu.icon}></i>
+                        <Link to={menu.path}>{menu.name}</Link>
+                      </div>
+                    </>
+                  );
+                })}
+
+              </div>
+              <div className="col-content">
+                <div className="header">
+                  <div className="header-content" style={{ cursor: "pointer" }}>
+                    <Badge
+                      count={user && user.notifcation.length}
+                      onClick={() => {
+                        navigate("/notification");
+                      }}
+                    >
+                      <i className="fa-solid fa-bell"></i>
+                    </Badge>
+
+                    <Link to="/profile">{user?.name}</Link>
+                  </div>
+                </div>
+                <br />
+
+                <div onClick={handleLogout}>
+                  <Link to="/login">
+                    <button id="logoutbtn" type="submit">
+                      Logout
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="content">
-            <div className="header">
-              <div className="header-content" style={{ cursor: "pointer" }}>
-                <Badge
-                  count={user && user.notifcation.length}
-                  onClick={() => {
-                    navigate("/notification");
-                  }}
-                >
-                  <i class="fa-solid fa-bell"></i>
-                </Badge>
-
-                <Link to="/profile">{user?.name}</Link>
-              </div>
-            </div>
+          <div className="row">
             <div className="body">{children}</div>
           </div>
         </div>

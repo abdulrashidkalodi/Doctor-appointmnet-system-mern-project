@@ -5,7 +5,7 @@ export const userMenu = [
       icon: "fa-solid fa-house",
     },
     {
-      name: "Appointments",
+      name: "Appoint",
       path: "/appointments",
       icon: "fa-solid fa-list",
     },
@@ -19,6 +19,7 @@ export const userMenu = [
       path: "/profile",
       icon: "fa-solid fa-user",
     },
+    
   ];
   
   // admin menu
