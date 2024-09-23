@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/techinfo-youtube/Doctor-appointmnet-system-mern-project.git"
+    "url": "git+https://github.com/abdulrashidkalodi/Doctor-appointment-application.git"
   },
   "bugs": {
-    "url": "https://github.com/techinfo-youtube/Doctor-appointmnet-system-mern-project/issues"
+    "url": "https://github.com/abdulrashidkalodi/Doctor-appointment-application.git/issues"
   },
-  "homepage": "https://github.com/techinfo-youtube/Doctor-appointmnet-system-mern-project#readme"
+  "homepage": "https://github.com/abdulrashidkalodi/Doctor-appointment-application.git#readme"
 }
