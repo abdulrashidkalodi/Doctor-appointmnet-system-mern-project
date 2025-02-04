@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/LayoutStyles.css";
 import { adminMenu, userMenu } from "./../Data/data";
-
+import logo from "../images/hospitel_logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Badge, message } from "antd";
@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
                     height: "auto",
                     marginLeft: "30px",
                   }}
-                  src="https://www.aryavaidyasala.com/images/avs-logo.png"
+                  src={logo}
                   alt="not_found_icon"
                 />
                 <h6
@@ -86,7 +86,6 @@ const Layout = ({ children }) => {
                     </>
                   );
                 })}
-
               </div>
               <div className="col-content">
                 <div className="header">
@@ -100,7 +99,7 @@ const Layout = ({ children }) => {
                       <i className="fa-solid fa-bell"></i>
                     </Badge>
 
-                    <Link to="/profile">{user?.name}</Link>
+                    <Link to={`/doctor/profile/${user?._id}`}>{user?.name}</Link>
                   </div>
                 </div>
                 <br />

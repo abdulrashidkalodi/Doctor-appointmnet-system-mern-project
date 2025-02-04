@@ -50,6 +50,10 @@ import Layout from "./../components/Layout";
 import { Row } from "antd";
 import DoctorList from "../components/DoctorList";
 import Footer from "./Footer";
+import banner1 from "../images/banner1.jpg";
+import banner2 from "../images/banner2.jpg";
+import banner3 from "../images/banner3.jpg";
+
 const HomePage = () => {
   const [doctors, setDoctors] = useState([]);
   // login user data
@@ -78,6 +82,10 @@ const HomePage = () => {
   return (
     <div>
       <Layout>
+        <h1>Available Doctors</h1>
+        <Row>
+          {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
+        </Row>
         <div id="carousels" className="carousel">
           <div
             id="carouselExampleRide"
@@ -109,26 +117,56 @@ const HomePage = () => {
             <div className="carousel-inner">
               <div id="carousel-items" className="carousel-item active ">
                 <img
-                  src="https://dims.healthgrades.com/dims3/MMH/68bfb76/2147483647/strip/true/crop/5616x3138+0+303/resize/800x447!/quality/75/?url=https%3A%2F%2Fucmscdn.healthgrades.com%2F24%2F9d%2F5655408743ca94d39a59d91c6e95%2Fimage-senior-male-laughing-in-hospital-bed.jpg"
-                  className="d-block w-100  "
-                  alt="notavble"
+                  src={banner1}
+                  className="d-block w-100"
+                  alt="not_available"
                 />
+                <div className="carousel-caption d-none d-md-block text-black">
+                  <h4 className="sub-title mb-0">WELCOME TO ARYAVAIDYASALA</h4>
+                  <h1 className="title mt-0 bannertext">
+                    {" "}
+                    Our Legency Will Live Internationally
+                  </h1>
+                  <div className="btn-wrapper">
+                    <a href="/About" className="btn btn-outline-light mr-10">
+                      Read More
+                    </a>
+                    <a href="/About" className="btn btn-theme-color d2">
+                      About Us
+                    </a>
+                  </div>
+                </div>
               </div>
               <div id="carousel-items" className="carousel-item">
                 <img
-                  src="https://www.aryavaidyasala.com/webadmin/uploads/o_1b234katiegv7881d76n0d1ras7h.jpg"
-                  className="d-block w-100 "
-                  alt="notavble"
+                  src={banner2}
+                  className="d-block w-100"
+                  alt="not_available"
                 />
+                <div className="carousel-caption d-none d-md-block text-black">
+                  <h4 className="sub-title mb-0">WELCOME TO ARYAVAIDYASALA</h4>
+                  <h1 className="title mt-0 bannertext">
+                    {" "}
+                    Our Legency Will Live Internationally
+                  </h1>
+                  <div className="btn-wrapper">
+                    <a href="/About" className="btn btn-outline-light mr-10">
+                      Read More
+                    </a>
+                    <a href="/About" className="btn btn-theme-color d2">
+                      About Us
+                    </a>
+                  </div>
+                </div>
               </div>
               <div id="carousel-items" className="carousel-item">
                 <img
-                  src="https://www.aryavaidyasala.com/webadmin/uploads/o_1b234gn7f14dplodk8h1fiaqfk2a.jpg"
-                  className="d-block w-100 "
-                  alt="notavble"
+                  src={banner3}
+                  className="d-block w-100"
+                  alt="not_available"
                 />
                 {/* start */}
-                <div className="carousel-caption d-none d-md-block">
+                <div className="carousel-caption d-none d-md-block text-black">
                   <h4 className="sub-title mb-0">WELCOME TO ARYAVAIDYASALA</h4>
                   <h1 className="title mt-0 bannertext">
                     {" "}
@@ -173,9 +211,9 @@ const HomePage = () => {
           </div>
         </div>
       </Layout>
-      <Row>
+      {/* <Row>
         {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
-      </Row>
+      </Row> */}
       <Footer />
     </div>
   );
